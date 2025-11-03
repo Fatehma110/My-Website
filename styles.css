@@ -108,6 +108,16 @@ nav a:hover {
     margin-bottom: 40px;
 }
 
+.essays-link {
+    color: #888;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.essays-link:hover {
+    color: #fff;
+}
+
 .essay-list {
     display: flex;
     flex-direction: column;
