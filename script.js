@@ -1,7 +1,7 @@
 // Theme toggle function
 function toggleTheme(theme) {
     const body = document.body;
-    const essaysTitle = document.querySelector('.essays-section h1');
+    const essaysTitle = document.querySelector('.essays-section h3');
     const essayItems = document.querySelectorAll('.essay-item');
     
     if (theme === 'light') {
