@@ -1,18 +1,40 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+#welcomeScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    cursor: pointer;
+    transition: opacity 0.5s;
 }
 
-body {
-    background-color: #1e7854;
-    color: #c3f5b3;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-    line-height: 1.6;
-    padding: 40px 60px;
+.welcome-content {
+    text-align: center;
+    color: #fff;
 }
 
-/* Music Toggle Button */
+.welcome-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.welcome-content p {
+    font-size: 18px;
+    color: #888;
+    margin: 10px 0;
+}
+
+.music-hint {
+    font-size: 14px !important;
+    margin-top: 20px !important;
+}
+
 .music-toggle {
     position: fixed;
     bottom: 20px;
@@ -33,147 +55,4 @@ body {
 .music-toggle:hover {
     background: rgba(255, 255, 255, 0.2);
     transform: scale(1.1);
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 60px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #333;
-}
-
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #fff;
-}
-
-nav {
-    display: flex;
-    gap: 30px;
-}
-
-nav a {
-    color: #c3f5b3;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-nav a:hover {
-    color: #fff;
-}
-
-.theme-toggle {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-
-.theme-btn {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.theme-btn:hover {
-    transform: scale(1.1);
-}
-
-.light-btn {
-    background-color: #f0f0f0;
-}
-
-.dark-btn {
-    background-color: #ff69b4;
-}
-
-.about-section {
-    margin-bottom: 60px;
-}
-
-.about-section h2 {
-    color: #888;
-    font-size: 14px;
-    font-weight: normal;
-    margin-bottom: 20px;
-    cursor: pointer;
-}
-
-.about-section h2::before {
-    content: '▶ ';
-    font-size: 12px;
-}
-
-.about-content {
-    padding-left: 20px;
-    line-height: 2;
-}
-
-.about-content li {
-    list-style: none;
-    margin-bottom: 8px;
-}
-
-.about-content li::before {
-    content: '• ';
-    color: #666;
-}
-
-.essays-section h3 {
-    color: #888;
-    font-size: 42px;
-    font-weight: 300;
-    margin-bottom: 40px;
-}
-
-.essays-link {
-    color: #888;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.essays-link:hover {
-    color: #fff;
-}
-
-.essay-list {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-.essay-item {
-    color: #c3f5b3;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s, padding-left 0.3s;
-    display: block;
-}
-
-.essay-item:hover {
-    color: #fff;
-    padding-left: 10px;
-}
-
-@media (max-width: 768px) {
-    body {
-        padding: 20px 30px;
-    }
-
-    header {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    nav {
-        gap: 15px;
-    }
-
-    .essays-section h1 {
-        font-size: 32px;
-    }
 }
