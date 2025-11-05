@@ -7,31 +7,31 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Welcome Screen -->
+    <!-- Welcome Screen with Music -->
     <div id="welcomeScreen">
         <div class="welcome-content">
             <h1>Welcome</h1>
-            <p>Click to enter</p>
+            <p>Click anywhere to enter</p>
         </div>
+        
+        <!-- Skip Button (Bottom Right) -->
+        <button class="skip-btn" onclick="skipWelcome()">
+            Skip →
+        </button>
     </div>
+
+    <!-- Background Music (only plays on welcome screen) -->
+    <audio id="welcomeMusic" loop autoplay>
+        <source src="music/your-song.mp3" type="audio/mpeg">
+    </audio>
 
     <header>
         <div class="logo">Fatima Ali</div>
     </header>
 
-    <!-- Background Music -->
-    <audio id="bgMusic" loop>
-        <source src="downloads/website.mp3" type="audio/mpeg">
-    </audio>
-
-    <!-- Music Toggle Button -->
-    <button class="music-toggle" id="musicBtn" onclick="toggleMusic()" style="display: none;">
-        🔊
-    </button>
-
     <main>
         <section class="about-section">
-            <h3>About</h3>
+            <h2>About</h2>
             <div class="about-content">
                 <ul>
                     <li>An Avid Reader</li>
@@ -40,37 +40,36 @@
         </section>
 
         <section class="essays-section">
-            <h2><a href="essays.html" class="essays-link">Essays</a></h2>
+            <h3><a href="essays.html" class="essays-link">Essays</a></h3>
         </section>
     </main>
 
     <script src="script.js"></script>
     <script>
-        // Auto-play music after welcome screen
         const welcomeScreen = document.getElementById('welcomeScreen');
-        const bgMusic = document.getElementById('bgMusic');
-        const musicBtn = document.getElementById('musicBtn');
-        let isMuted = false;
+        const welcomeMusic = document.getElementById('welcomeMusic');
 
-        welcomeScreen.addEventListener('click', () => {
+        // Function to skip/close welcome screen
+        function skipWelcome() {
+            welcomeMusic.pause(); // Stop music
             welcomeScreen.style.opacity = '0';
             setTimeout(() => {
                 welcomeScreen.style.display = 'none';
             }, 500);
-            bgMusic.play();
-            musicBtn.style.display = 'block';
+        }
+
+        // Click anywhere to skip
+        welcomeScreen.addEventListener('click', function(e) {
+            // Don't trigger if clicking the skip button
+            if (!e.target.classList.contains('skip-btn')) {
+                skipWelcome();
+            }
         });
 
-        function toggleMusic() {
-            if (isMuted) {
-                bgMusic.muted = false;
-                musicBtn.textContent = '🔊';
-            } else {
-                bgMusic.muted = true;
-                musicBtn.textContent = '🔇';
-            }
-            isMuted = !isMuted;
-        }
+        // Auto-play music (some browsers might block this)
+        welcomeMusic.play().catch(error => {
+            console.log("Autoplay blocked. Music will play on interaction.");
+        });
     </script>
 </body>
 </html>
