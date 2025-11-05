@@ -77,3 +77,14 @@ body {
 .essay-item::after {
     display: none;  /* Add this line */
 }
+
+.essay-item {
+    color: #b8d4c8;
+    text-decoration: underline;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.essay-item:hover {
+    color: #ffffff;
+}
