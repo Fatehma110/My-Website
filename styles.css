@@ -89,35 +89,6 @@ header {
     color: #fff;
 }
 
-/* About Section */
-.about-section {
-    margin-bottom: 60px;
-}
-
-.about-section h2 {
-    color: #c1d6d0;
-    font-size: 14px;
-    font-weight: normal;
-    margin-bottom: 20px;
-    cursor: pointer;
-}
-
-.about-content {
-    padding-left: 20px;
-    line-height: 2;
-}
-
-.about-content li {
-    list-style: none;
-    margin-bottom: 8px;
-    color: #c1d6d0;
-}
-
-.about-content li::before {
-    content: '• ';
-    color: #c1d6d0;
-}
-
 /* Essays Section */
 .essays-section h1,
 .essays-section h3 {
@@ -192,3 +163,153 @@ header {
         font-size: 32px;
     }
 }
+
+/* Mywhys Section */
+.mywhys-section h1,
+.mywhys-section h3 {
+    color: #c1d6d0;
+    font-size: 42px;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+.mywhys-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* My Whys Item Links */
+.mywhys-item {
+    color: #c1d6d0;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s, padding-left 0.3s;
+    display: block;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.mywhys-item:hover {
+    color: #ffffff;
+    padding-left: 10px;
+}
+
+/* Animated underline effect */
+.mywhys-item::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff;
+    transition: width 0.3s ease;
+}
+
+.mywhys-item:hover::after {
+    width: 100%;
+}
+
+/* My Whys Link (for About section links) */
+.mywhys-link {
+    color: #c1d6d0;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.mywhys-link:hover {
+    color: #ffffff;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    body {
+        padding: 20px 30px;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .mywhys-section h1,
+    .mywhys-section h3 {
+        font-size: 32px;
+    }
+}
+/* Projects Section */
+.projects-section h1,
+.projects-section h3 {
+    color: #c1d6d0;
+    font-size: 42px;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Projects Item Links */
+.projects-item {
+    color: #c1d6d0;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s, padding-left 0.3s;
+    display: block;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.projects-item:hover {
+    color: #ffffff;
+    padding-left: 10px;
+}
+
+/* Animated underline effect */
+.projects-item::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff;
+    transition: width 0.3s ease;
+}
+
+.projects-item:hover::after {
+    width: 100%;
+}
+
+/* Projects Link (for About section links) */
+.projects-link {
+    color: #c1d6d0;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.projects-link:hover {
+    color: #ffffff;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    body {
+        padding: 20px 30px;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .projects-section h1,
+    .projects-section h3 {
+        font-size: 32px;
+    }
+}
+
