@@ -67,3 +67,13 @@ body {
     transform: translateX(5px);
     border-color: rgba(255, 255, 255, 0.5);
 }
+
+.essay-item {
+    color: #b8d4c8;
+    text-decoration: none;  /* Removes underline */
+}
+
+/* Remove the animated underline effect */
+.essay-item::after {
+    display: none;  /* Add this line */
+}
