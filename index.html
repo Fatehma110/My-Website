@@ -58,7 +58,25 @@
         </section>
      </main>
 
-    <script src="script.js"></script>
+    <script src="script.js">
+        <script>
+    const welcomeScreen = document.getElementById('welcomeScreen');
+    const welcomeMusic = document.getElementById('welcomeMusic');
+    
+    // Function to skip/close welcome screen
+    function skipWelcome() {
+        welcomeMusic.pause();
+        welcomeMusic.currentTime = 0;
+        welcomeScreen.style.opacity = '0';
+        setTimeout(() => {
+            welcomeScreen.style.display = 'none';
+        }, 500);
+    }
+    
+    // Click anywhere to skip
+    welcomeScreen.addEventListener('click', function(e) {
+        if (!e.target.classList.
+    </script>
 
 </body>
 </html>
