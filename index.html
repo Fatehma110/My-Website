@@ -62,24 +62,32 @@
     <script>
         const welcomeScreen = document.getElementById('welcomeScreen');
         const welcomeMusic = document.getElementById('welcomeMusic');
-
-        // Function to skip/close welcome screen
-        function skipWelcome() {
-            welcomeMusic.pause(); // Stop music
-            welcomeScreen.style.opacity = '0';
-            setTimeout(() => {
-                welcomeScreen.style.display = 'none';
-            }, 500);
+<script>
+    const welcomeScreen = document.getElementById('welcomeScreen');
+    const welcomeMusic = document.getElementById('welcomeMusic');
+    
+    // Function to skip/close welcome screen
+    function skipWelcome() {
+        welcomeMusic.pause(); // Stop music
+        welcomeMusic.currentTime = 0; // Reset
+        welcomeScreen.style.opacity = '0';
+        setTimeout(() => {
+            welcomeScreen.style.display = 'none';
+        }, 500);
+    }
+    
+    // Click anywhere to skip (REMOVED setTimeout)
+    welcomeScreen.addEventListener('click', function(e) {
+        if (!e.target.classList.contains('skip-btn')) {
+            skipWelcome(); // Skip immediately
         }
-
-        // Click anywhere to skip
-        welcomeScreen.addEventListener('click', function(e) {
-            // Don't trigger if clicking the skip button
-            if (!e.target.classList.contains('skip-btn')) {
-                skipWelcome();
-            }
-        });
-
+    });
+    
+    // Auto-play music
+    welcomeMusic.play().catch(error => {
+        console.log("Autoplay blocked. Music will play on interaction.");
+    });
+</script>
         // Auto-play music (some browsers might block this)
         welcomeMusic.play().catch(error => {
             console.log("Autoplay blocked. Music will play on interaction.");
