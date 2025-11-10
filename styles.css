@@ -164,23 +164,23 @@ header {
     }
 }
 
-/* Mywhys Section */
-.mywhys-section h1,
-.mywhys-section h3 {
+/* Thehowbehindmywhys Section */
+.thehowbehindmywhys-section h1,
+.thehowbehindmywhys-section h3 {
     color: #c1d6d0;
     font-size: 42px;
     font-weight: 300;
     margin-bottom: 40px;
 }
 
-.mywhys-list {
+.thehowbehindmywhys-list {
     display: flex;
     flex-direction: column;
     gap: 25px;
 }
 
-/* My Whys Item Links */
-.mywhys-item {
+/* The How Behind My whys Item Links */
+.thehowbehindmywhys-item {
     color: #c1d6d0;
     text-decoration: none;
     font-size: 18px;
@@ -190,13 +190,13 @@ header {
     padding-bottom: 5px;
 }
 
-.mywhys-item:hover {
+.thehowbehindmywhys-item:hover {
     color: #ffffff;
     padding-left: 10px;
 }
 
 /* Animated underline effect */
-.mywhys-item::after {
+.thehowbehindmywhys-item::after {
     content: '';
     position: absolute;
     width: 0;
@@ -207,18 +207,18 @@ header {
     transition: width 0.3s ease;
 }
 
-.mywhys-item:hover::after {
+.thehowbehindmywhys-item:hover::after {
     width: 100%;
 }
 
-/* My Whys Link (for About section links) */
-.mywhys-link {
+/* The How Behind My Whys Link (for About section links) */
+.thehowbehindmywhyss-link {
     color: #c1d6d0;
     text-decoration: none;
     transition: color 0.3s;
 }
 
-.mywhys-link:hover {
+.thehowbehindmywhys-link:hover {
     color: #ffffff;
 }
 
@@ -233,8 +233,8 @@ header {
         gap: 20px;
     }
 
-    .mywhys-section h1,
-    .mywhys-section h3 {
+    .thehowbehindmywhys-section h1,
+    .thehowbehindmywhys-section h3 {
         font-size: 32px;
     }
 }
