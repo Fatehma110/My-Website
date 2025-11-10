@@ -269,9 +269,6 @@ header {
     padding-left: 10px;
 }
 
-.candles {
-  margin-bottom: 30px;
-
 /* Animated underline effect */
 .projects-item::after {
     content: '';
@@ -315,4 +312,6 @@ header {
         font-size: 32px;
     }
 }
+.behind-the-website-heading {
+  margin-top: 40px; /* Adjust the value as needed */
 
