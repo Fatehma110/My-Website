@@ -311,11 +311,15 @@ header {
     .projects-section h3 {
         font-size: 32px;
     }
-.behind-website-section {
-  position: fixed;
-  bottom: 100px;
-  right: 100px;
+    
+.behindthewebsite-section {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
 }
-.behind-website-section a {
-  font-size: 12px;
+
+.behindthewebsite-section a {
+    font-size: 14px;
+    color: #4a9eff;
+    text-decoration: none;
 }
