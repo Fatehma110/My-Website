@@ -316,3 +316,6 @@ header {
   bottom: 100px;
   right: 100px;
 }
+.behind-website-section a {
+  font-size: 12px;
+}
