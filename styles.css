@@ -311,79 +311,8 @@ header {
     .projects-section h3 {
         font-size: 32px;
     }
+.behind-website-section {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
 }
-/* Behind The Website */
-.behindthewebsite-section h1,
-.behindthewebsite-section h3 {
-    color: #c1d6d0;
-    font-size: 42px;
-    font-weight: 300;
-    margin-bottom: 40px;
-}
-
-.behindthewebsite-list {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-/* Behind The website Item Links */
-.behindthewebsite-item {
-    color: #c1d6d0;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s, padding-left 0.3s;
-    display: block;
-    position: relative;
-    padding-bottom: 5px;
-}
-
-.behindthewebsite-item:hover {
-    color: #ffffff;
-    padding-left: 10px;
-}
-
-/* Animated underline effect */
-.behindthewebsite-item::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 1px;
-    bottom: 0;
-    left: 0;
-    background-color: #ffffff;
-    transition: width 0.3s ease;
-}
-
-.behindthewebsite-item:hover::after {
-    width: 100%;
-}
-
-/* Behind The Website Link */
-.behindthewebsite-link {
-    color: #c1d6d0;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.behindthewebsite-link:hover {
-    color: #ffffff;
-}
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-    body {
-        padding: 20px 30px;
-    }
-
-    header {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .behindthewebsite-section h1,
-    .behindthewebsite-section h3 {
-        font-size: 32px;
-    }
-
-
