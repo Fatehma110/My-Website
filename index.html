@@ -62,7 +62,8 @@
     
  const welcomeScreen = document.getElementById('welcomeScreen');
 const welcomeMusic = document.getElementById('welcomeMusic');
-
+    
+<script>
 // Function to skip/close welcome screen
 function skipWelcome() {
     welcomeMusic.pause();
@@ -80,6 +81,6 @@ welcomeScreen.addEventListener('click', function(e) {
         skipWelcome();
     }
 });     
-
+</script>
 </body>
 </html>
