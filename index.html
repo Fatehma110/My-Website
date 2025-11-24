@@ -60,6 +60,26 @@
     
     <a href="behindthewebsite.html" class="behindthewebsite-link">behind the website</a>
     
+ const welcomeScreen = document.getElementById('welcomeScreen');
+const welcomeMusic = document.getElementById('welcomeMusic');
+
+// Function to skip/close welcome screen
+function skipWelcome() {
+    welcomeMusic.pause();
+    welcomeMusic.currentTime = 0;
+    welcomeScreen.style.opacity = '0';
+    
+    setTimeout(() => {
+        welcomeScreen.style.display = 'none';
+    }, 500);
+}
+
+// Click anywhere to skip
+welcomeScreen.addEventListener('click', function(e) {
+    if (!e.target.classList.contains('skip-button')) {
+        skipWelcome();
+    }
+});     
 
 </body>
 </html>
