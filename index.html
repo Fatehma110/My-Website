@@ -61,33 +61,30 @@
     <a href="behindthewebsite.html" class="behindthewebsite-link">behind the website</a>
     <div class="custom-cursor"></div>
     
-        <!-- JavaScript should be at the bottom, before closing </body> tag -->
     <script>
-        const welcomeScreen = document.getElementById('welcomeScreen');
-        const welcomeMusic = document.getElementById('welcomeMusic');
+    const welcomeScreen = document.getElementById('welcomeScreen');
+    const welcomeMusic = document.getElementById('welcomeMusic');
+    
+    // Function to skip/close welcome screen
+    function skipWelcome() {
+        welcomeMusic.pause();
+        welcomeMusic.currentTime = 0;
+        welcomeScreen.style.opacity = '0';
         
-        // Function to skip/close welcome screen
-        function skipWelcome() {
-            welcomeMusic.pause();
-            welcomeMusic.currentTime = 0;
-            welcomeScreen.style.opacity = '0';
-            
-            setTimeout(() => {
-                welcomeScreen.style.display = 'none';
-            }, 500);
+        setTimeout(() => {
+            welcomeScreen.style.display = 'none';
+        }, 500);
+    }
+    
+    // Click anywhere to skip
+    welcomeScreen.addEventListener('click', function(e) {
+        if (!e.target.classList.contains('skip-btn')) {  // FIXED: Changed to 'skip-btn'
+            skipWelcome();
         }
-        
-        // Click anywhere to skip
-        welcomeScreen.addEventListener('click', function(e) {
-            if (!e.target.classList.contains('skip-button')) {
-                skipWelcome();
-            }
-        });
-        const randomNum = Math.floor(Math.random() * 100); // 0-99
-     // In the mousemove throttle:
-        if (now - lastMoveTime > 50) { // Lower = more numbers (e.g., 30)
-        number.style.color = colors[Math.floor(Math.random() * colors.length)];
-    </script>
+    });
+    
+    // REMOVE the broken code below or add complete cursor effect
+</script>
     
 </body>
 </html>
