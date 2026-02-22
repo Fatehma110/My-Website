@@ -14,7 +14,7 @@
             <p>Click anywhere to enter</p>
         </div>
         
-        <!--- Skip Button (Bottom Right) --->
+        <!-- Skip Button (Bottom Right) -->
         <button class="skip-btn" onclick="skipWelcome()">
             Skip →
         </button>
@@ -33,68 +33,60 @@
         <section class="essays-section">
             <h2>ESSAYS</h2>
             <div class="essay-list">
-                <a href="Coming Soon.html" class="essay-item">Coming Soon!</a>
+                <a href="Coming%20Soon.html" class="essay-item">Coming Soon!</a>
             </div>
         </section>
-       
-    </main>
-    
-    <main>
+
         <section class="thehowbehindmywhys-section">
             <h2>The How Behind My Whyss??</h2>
             <div class="thehowbehinfmywhys-list">
                 <a href="thinkingandwriting.html" class="thehowbehindmywhys-item">How writing helps in thinking</a>
             </div>
         </section>
-        
-    </main>
-    
-      <main>  
+
         <section class="projects-section">
             <h2>PROJECTS</h2>
             <div class="projects-list">
                 <a href="candles.html" class="projects-item">Candles</a>
             </div>
         </section>
-     </main>
-    
-            <div class="behindthewebsite-section">
-                <a href="behindthewebsite.html">behind the website</a>
-            </div>
-    
+    </main>
+
+    <div class="behindthewebsite-section">
+        <a href="behindthewebsite.html">behind the website</a>
+    </div>
+
     <script>
-    const welcomeScreen = document.getElementById('welcomeScreen');
-    const welcomeMusic = document.getElementById('welcomeMusic');
-    let musicStarted = false;
+        const welcomeScreen = document.getElementById('welcomeScreen');
+        const welcomeMusic = document.getElementById('welcomeMusic');
+        let musicStarted = false;
 
-    function skipWelcome() {
-        welcomeMusic.pause();
-        welcomeMusic.currentTime = 0;
-        welcomeScreen.style.opacity = '0';
-
-        setTimeout(() => {
-            welcomeScreen.style.display = 'none';
-        }, 500);
-    }
-
-    welcomeScreen.addEventListener('click', function(e) {
-        // START music on first interaction (fixes autoplay block)
-        if (!musicStarted) {
-            welcomeMusic.volume = 0.5;
-            welcomeMusic.play();
-            musicStarted = true;
+        function skipWelcome() {
+            welcomeMusic.pause();
+            welcomeMusic.currentTime = 0;
+            welcomeScreen.style.opacity = '0';
+            setTimeout(() => {
+                welcomeScreen.style.display = 'none';
+            }, 500);
         }
 
-        if (!e.target.classList.contains('skip-btn')) {
+        welcomeScreen.addEventListener('click', function(e) {
+            if (!musicStarted) {
+                welcomeMusic.volume = 0.5;
+                welcomeMusic.play();
+                musicStarted = true;
+            }
+            if (!e.target.classList.contains('skip-btn')) {
+                setTimeout(() => {
+                    skipWelcome();
+                }, 1500);
+            }
+        });
+
+        document.querySelector('.skip-btn').addEventListener('click', function() {
             skipWelcome();
-        }
-    });
+        });
+    </script>
 
-    // Also play music when skip button is clicked, then immediately stop
-    document.querySelector('.skip-btn').addEventListener('click', function() {
-        skipWelcome();
-    });
-</script>
-    
 </body>
 </html>
