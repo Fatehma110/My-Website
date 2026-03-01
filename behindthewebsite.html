@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Photos</title>
+    <title>my_camera_roll.exe</title>
     <style>
         * {
             margin: 0;
@@ -97,11 +97,19 @@
 <body>
 
     <h1>my_camera_roll.exe</h1>
-
     <div class="gallery">
-        <!-- Add your images here, replace src with your image paths -->
-        <img src="https://raw.githubusercontent.com/Fatehma110/My-Website/main/photo1.png" alt="Photo 1" onclick="openLightbox(this)">
-        <!-- Keep adding more <img> tags as needed -->
+        <!-- Images -->
+            <img src="https://raw.githubusercontent.com/Fatehma110/My-Website/main/photo1.png" alt="Photo 1" onclick="openLightbox(0)">
+        
+        <!-- Video -->
+        <video onclick="openLightbox(1)">
+            <source src="https://raw.githubusercontent.com/Fatehma110/My-Website/main/focus.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Add more images/videos as needed -->
+        <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0" alt="Photo 2" onclick="openLightbox(2)">
+        <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e" alt="Photo 3" onclick="openLightbox(3)">
     </div>
 
     <!-- Lightbox -->
