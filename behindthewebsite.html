@@ -3,50 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fatima Ali</title>
-    
-    <!-- Link to CSS file (in <head>) -->
-    <link rel="stylesheet" href="styles.css">
+    <title>My Gallery</title>
+    <style>
+        body {
+            background-color: #2d5550;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Video container styles */
+        .video-container {
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .video-container:hover {
+            transform: scale(1.05);
+        }
+
+        .video-container video {
+            display: block;
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            pointer-events: none; /* IMPORTANT: Prevents video from blocking clicks */
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .close-btn:hover {
+            color: #ff6b6b;
+        }
+    </style>
 </head>
 <body>
-    <!-- Welcome Screen -->
-    <div id="welcomeScreen">
-        <div class="welcome-content">
-            <h1>Welcome</h1>
-            <p>Click anywhere to enter</p>
-        </div>
-        <button class="skip-btn" onclick="skipWelcome()">Skip →</button>
-    </div>
+    <h1 style="color: white; text-align: center; margin-bottom: 30px;">My Gallery</h1>
 
-    <!-- Audio -->
-    <audio id="welcomeMusic" loop>
-        <source src="https://raw.githubusercontent.com/Fatehma110/My-Website/main/Strangerthings.mp3" type="audio/mpeg">
-    </audio>
-
-    <!-- Header -->
-    <header>
-        <div class="logo">FATIMA ALI</div>
-    </header>
-
-    <!-- Main Content -->
-    <main>
-        <section class="essays-section">
-            <h2>ESSAYS</h2>
-            <div class="essay-list">
-                <a href="Coming Soon.html" class="essay-item">Coming Soon!</a>
-            </div>
-        </section>
-    </main>
-
-    <!-- Gallery -->
     <div class="gallery">
+        <!-- Images -->
         <img src="https://fatehma110.github.io/My-Website/photo1.png" alt="Photo 1" onclick="openLightbox(0)">
         
+        <!-- Video with wrapper -->
         <div class="video-container" onclick="openLightbox(1)">
             <video autoplay loop muted playsinline>
                 <source src="https://fatehma110.github.io/My-Website/focus.mp4" type="video/mp4">
+                Your browser does not support the video tag.
             </video>
         </div>
+
+        <!-- More images -->
+        <img src="https://picsum.photos/300/200?random=2" alt="Photo 2" onclick="openLightbox(2)">
     </div>
 
     <!-- Lightbox -->
@@ -55,8 +119,63 @@
         <div id="lightbox-media"></div>
     </div>
 
-    <!-- Link to JavaScript file (at bottom, before </body>) -->
-    <script src="script.js"></script>
+    <script>
+        let currentIndex = 0;
+        const galleryItems = document.querySelectorAll('.gallery img, .gallery .video-container video');
+
+        function openLightbox(index) {
+            currentIndex = index;
+            const lightbox = document.getElementById('lightbox');
+            const mediaContainer = document.getElementById('lightbox-media');
+            
+            lightbox.classList.add('active');
+            mediaContainer.innerHTML = '';
+            
+            const item = galleryItems[index];
+            
+            if (item.tagName === 'IMG') {
+                // Display image
+                const img = document.createElement('img');
+                img.src = item.src;
+                img.alt = item.alt;
+                img.className = 'lightbox-content';
+                mediaContainer.appendChild(img);
+            } else if (item.tagName === 'VIDEO') {
+                // Display video with controls
+                const video = document.createElement('video');
+                video.controls = true;
+                video.autoplay = true;
+                video.className = 'lightbox-content';
+                video.style.maxWidth = '90%';
+                video.style.maxHeight = '90%';
+                
+                const source = document.createElement('source');
+                source.src = item.querySelector('source').src;
+                source.type = 'video/mp4';
+                
+                video.appendChild(source);
+                mediaContainer.appendChild(video);
+            }
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            
+            // Stop video if playing
+            const video = document.querySelector('.lightbox video');
+            if (video) {
+                video.pause();
+            }
+        }
+
+        // Close on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
 </body>
 </html>
   
